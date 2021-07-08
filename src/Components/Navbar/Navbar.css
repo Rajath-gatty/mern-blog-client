@@ -1,0 +1,38 @@
+.nav-wrapper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+}
+
+.nav-wrapper .nav-items svg {
+    font-size: 45px;
+}
+
+.main-hdng {
+    font-size: 35px;
+    color: var(--primary-color);
+    font-family: "segoe-UI-bold", sans-serif;
+}
+
+.nav-wrapper svg {
+    color: #ccc;
+}
+
+a {
+    font-size: 17px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.strech {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+}

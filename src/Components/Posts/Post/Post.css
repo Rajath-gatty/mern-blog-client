@@ -1,0 +1,33 @@
+.post-wrapper {
+    display: flex;
+    gap: 1rem;
+    color: rgb(87, 87, 87);
+}
+
+.hdng {
+    font-size: 18px;
+    margin-bottom: 0.25rem;
+    margin-top: 0.15rem;
+}
+
+.content {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.img {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-color);
+}
+
+.post-info span {
+    font-size: 13px;
+    margin-top: 1rem;
+}

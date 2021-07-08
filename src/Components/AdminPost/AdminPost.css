@@ -1,0 +1,19 @@
+.single-admin-post svg {
+    visibility: hidden;
+}
+
+.single-admin-post svg:hover {
+    cursor: pointer;
+}
+
+.single-admin-post:hover svg {
+    visibility: visible;
+}
+
+.single-admin-post:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.single-admin-post svg {
+    color: rgb(207, 105, 105);
+}

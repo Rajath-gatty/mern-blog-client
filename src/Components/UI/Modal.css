@@ -1,0 +1,11 @@
+.modal-wrapper {
+    padding: 0.75rem;
+    width: 500px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-width: 1px;
+}
