@@ -69,7 +69,7 @@ const Home = (props) => {
                                             key={post._id}
                                             id={post._id}
                                             title={post.title}
-                                            imagePath={post.imagePath}
+                                            imagePath={post.image.url}
                                         />
                                     );
                                 })

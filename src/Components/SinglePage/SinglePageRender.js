@@ -1,10 +1,7 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 
 const SinglePageRender = (props) => {
     return (
-        <>
-            <Navbar />
             <div className="container">
                 <div className="single-page-wrapper">
                     <img
@@ -18,7 +15,6 @@ const SinglePageRender = (props) => {
                     </div>
                 </div>
             </div>
-        </>
     );
 };
 

@@ -80,7 +80,7 @@ const Post = (props) => {
                     <div className="post-wrapper">
                         <img
                             className="img"
-                            src={`https://mern-blog12.herokuapp.com/` + imagePath}
+                            src={imagePath}
                             alt={Math.random().toString()}
                         />
                         <div className="content-wrapper">

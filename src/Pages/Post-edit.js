@@ -23,6 +23,9 @@ const PostEdit = (props) => {
                 setBase64(reader.result);
             }
         };
+        if(!e.target.files[0]) {
+            return;
+        }
         const filetype = e.target.files[0].type;
         if (
             filetype === "image/jpg" ||
@@ -54,6 +57,12 @@ const PostEdit = (props) => {
 
     const handleSubmitPost = (e) => {
         e.preventDefault();
+        const bytes = file.size;
+            const megabytes = bytes/1024/1024;
+            console.log(megabytes);
+            if(megabytes>5) {
+                return alert("File must be less than 2MB");
+            }
         const formData = new FormData();
         formData.append("title", title);
         formData.append("content", content);
@@ -66,7 +75,7 @@ const PostEdit = (props) => {
             })
             .then((result) => {
                 history.push("/");
-                console.log(result.data.data);
+                console.log(result.data);
                 setTotalPost(result.data.data);
             })
             .catch((err) => {
