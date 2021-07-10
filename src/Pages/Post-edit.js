@@ -11,7 +11,7 @@ const PostEdit = (props) => {
     const [file, setFile] = useState(null);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const { disableButton, enableButton, token, setTotalPost } =
+    const { disableButton, enableButton, token } =
         useBlogContext();
 
     const history = useHistory();
@@ -59,8 +59,8 @@ const PostEdit = (props) => {
         e.preventDefault();
         const bytes = file.size;
             const megabytes = bytes/1024/1024;
-            if(megabytes>5) {
-                return alert("File must be less than 2MB");
+            if(megabytes>3) {
+                return alert("File must be less than 3MB");
             }
         const formData = new FormData();
         formData.append("title", title);
@@ -74,7 +74,6 @@ const PostEdit = (props) => {
             })
             .then((result) => {
                 history.push("/");
-                setTotalPost(result.data.data);
             })
             .catch((err) => {
                 console.log(err);
