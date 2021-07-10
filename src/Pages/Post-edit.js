@@ -59,7 +59,6 @@ const PostEdit = (props) => {
         e.preventDefault();
         const bytes = file.size;
             const megabytes = bytes/1024/1024;
-            console.log(megabytes);
             if(megabytes>5) {
                 return alert("File must be less than 2MB");
             }
@@ -75,7 +74,6 @@ const PostEdit = (props) => {
             })
             .then((result) => {
                 history.push("/");
-                console.log(result.data);
                 setTotalPost(result.data.data);
             })
             .catch((err) => {

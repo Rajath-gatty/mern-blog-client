@@ -74,7 +74,7 @@ const Home = (props) => {
                                     );
                                 })
                             ) : (
-                                <h5
+                               !loading && <h5
                                     style={{
                                         textAlign: "center",
                                         color: "rgb(88, 88, 88)",

@@ -40,7 +40,6 @@ const Profile = (props) => {
                 },
             })
             .then((res) => {
-                console.log(res.data.user.posts);
                 setUser(res.data.user);
                 setLoading(false);
             })
@@ -69,7 +68,6 @@ const Profile = (props) => {
                 },
             })
             .then((res) => {
-                console.log(res.data);
                 history.replace("/");
             })
             .catch((err) => {
