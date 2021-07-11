@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {LinearProgress} from "@material-ui/core";
 
 import { useBlogContext } from "./Context/Context";
 import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import PostEdit from "./Pages/Post-edit";
-import Profile from "./Pages/Profile";
-import SinglePage from "./Pages/SinglePage";
-import Admin from "./Pages/Admin";
-import Page404 from "./Pages/Page404";
+const Login = React.lazy(() => import("./Pages/Login"));
+const Signup = React.lazy(() => import("./Pages/Signup"));
+const PostEdit = React.lazy(() => import("./Pages/Post-edit"));
+const Profile = React.lazy(() => import("./Pages/Profile"));
+const SinglePage = React.lazy(() => import("./Pages/SinglePage"));
+const Admin = React.lazy(() => import("./Pages/Admin"));
+const Page404 = React.lazy(() => import("./Pages/Page404"));
 
 function App() {
     const { isLoggedIn, setToken } = useBlogContext();
@@ -22,6 +23,7 @@ function App() {
         <>
             <Router>
                 <Switch>
+                    <Suspense fallback={<LinearProgress/>}>
                     <Route exact path="/">
                         <Home />
                     </Route>
@@ -53,6 +55,7 @@ function App() {
                             <Profile />
                         </Route>
                     )}
+                    </Suspense>
                     <Route path="*">
                         <Page404 />
                     </Route>
