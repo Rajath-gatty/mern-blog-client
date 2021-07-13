@@ -25,10 +25,10 @@ const Navbar = (props) => {
                             {pathname === "/admin/edit-post" ? (
                                 <button
                                     onClick={props.onClick}
-                                    disabled={isButtonDisabled}
+                                    disabled={isButtonDisabled || props.publishing}
                                     className="btn btn-special"
                                 >
-                                    Publish
+                                    {props.publishing? 'Publishing...' : 'Publish'}
                                 </button>
                             ) : (
                                 ""

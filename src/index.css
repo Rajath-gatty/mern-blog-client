@@ -41,8 +41,7 @@ a {
     display: flex;
     align-items: flex-start;
     gap: 8rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0.25rem;
 }
 
 .form-wrapper {
@@ -90,6 +89,14 @@ a {
     animation: animate 0.3s linear;
 }
 
+.btn-mobile {
+    display: none;
+}
+
+.btn-mobile:enabled {
+    animation: animate 0.3s linear;
+}
+
 @keyframes animate {
     0% {
         transform: scale(1);
@@ -117,7 +124,7 @@ a {
 }
 
 .btn:disabled {
-    opacity: 0.2;
+    opacity: 0.4;
     cursor: disabled;
 }
 
@@ -127,7 +134,7 @@ a {
     background: #fff;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
     border-radius: 25px;
-    width: 30%;
+    width: 400px;
     height: 40px;
     padding: 5px;
     overflow: hidden;
@@ -236,7 +243,7 @@ a {
     padding-top: 1rem;
     padding-right: 1rem;
     margin-right: 2rem;
-    width: 70%;
+    width: 100%;
 }
 
 .post-tags-wrapper label {
@@ -315,9 +322,21 @@ a {
     border-collapse: collapse;
     border: 1px solid rgb(214, 214, 214);
 }
+.admin-wrapper .loading-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+}
 
 .admin-wrapper thead {
     background-color: rgb(223, 223, 223);
+    color: rgb(78, 78, 78);
+}
+
+.admin-wrapper tbody {
+    color: rgb(109, 109, 109);
 }
 
 .admin-wrapper th {
@@ -358,7 +377,7 @@ a {
 
 .single-page-wrapper .single-post-img {
     width: 500px;
-    margin: 1rem;
+    margin: 0.25rem;
 }
 
 .single-page-wrapper .single-para {
@@ -371,7 +390,7 @@ a {
 }
 
 .skeleton-para {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 .error-msg {
@@ -499,4 +518,48 @@ a {
 .error-page {
     margin-bottom: 1rem;
     color: rgb(92, 92, 92);
+}
+
+@media (max-width: 700px) {
+    .single-page-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-wrapper {
+        width: 470px;
+    }
+
+    .search-wrapper {
+        width: 300px;
+    }
+
+    .post-form {
+        display: block;
+    }
+
+    .btn-special {
+        display: none;
+    }
+
+    .btn-mobile {
+        display: block;
+    }
+
+    .mobile-btn-flex {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+    .admin-wrapper thead {
+        font-size: 14px;
+    }
+
+    .admin-wrapper tbody {
+        font-size: 14px;
+    }
+
+    .admin-wrapper .admin-hdng {
+        font-size: 16px;
+    }
 }

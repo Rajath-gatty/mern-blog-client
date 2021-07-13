@@ -33,7 +33,7 @@ const Post = (props) => {
                     <Skeleton
                         animation="wave"
                         variant="rect"
-                        width="50%"
+                        width="60%"
                         height={180}
                     />
                     <div>
@@ -41,35 +41,36 @@ const Post = (props) => {
                             animation="wave"
                             variant="rect"
                             width={300}
-                            height={30}
+                            height={20}
+                            style={{marginTop: 10}}
                         />
                         <div className="skeleton-para">
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
                                 width={300}
-                                height={15}
+                                height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
                                 width={300}
-                                height={15}
+                                height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
                                 width={300}
-                                height={15}
+                                height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
                                 width={300}
-                                height={15}
+                                height={10}
                                 style={{ marginTop: 6 }}
                             />
                         </div>

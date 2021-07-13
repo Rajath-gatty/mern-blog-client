@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useBlogContext } from "../Context/Context";
 import Navbar from "../Components/Navbar/Navbar";
+import Modal from "../Components/UI/Modal";
 import axios from "axios";
 
 const PostEdit = (props) => {
@@ -11,7 +12,8 @@ const PostEdit = (props) => {
     const [file, setFile] = useState(null);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const { disableButton, enableButton, token } =
+    const [modal, setModal] = useState(false);
+    const { disableButton, enableButton, token, isButtonDisabled } =
         useBlogContext();
 
     const history = useHistory();
@@ -23,7 +25,7 @@ const PostEdit = (props) => {
                 setBase64(reader.result);
             }
         };
-        if(!e.target.files[0]) {
+        if (!e.target.files[0]) {
             return;
         }
         const filetype = e.target.files[0].type;
@@ -56,12 +58,13 @@ const PostEdit = (props) => {
     }, [title, content, base64, enableButton, disableButton]);
 
     const handleSubmitPost = (e) => {
+        setModal(true);
         e.preventDefault();
         const bytes = file.size;
-            const megabytes = bytes/1024/1024;
-            if(megabytes>3) {
-                return alert("File must be less than 3MB");
-            }
+        const megabytes = bytes / 1024 / 1024;
+        if (megabytes > 3) {
+            return alert("File must be less than 3MB");
+        }
         const formData = new FormData();
         formData.append("title", title);
         formData.append("content", content);
@@ -74,6 +77,7 @@ const PostEdit = (props) => {
             })
             .then((result) => {
                 history.push("/");
+                setModal(false);
             })
             .catch((err) => {
                 console.log(err);
@@ -82,8 +86,18 @@ const PostEdit = (props) => {
 
     return (
         <>
-            <Navbar onClick={handleSubmitPost} />
+            <Navbar onClick={handleSubmitPost} publishing={modal} />
+            {modal && <Modal timer={20000}>Publishing your Post.....</Modal>}
             <div className="create-post-wrapper">
+                <div className="mobile-btn-flex">
+                    <button
+                        onClick={handleSubmitPost}
+                        disabled={isButtonDisabled || modal}
+                        className="btn btn-mobile"
+                    >
+                        {modal ? "Publishing..." : "Publish"}
+                    </button>
+                </div>
                 <form className="post-form container">
                     <div className="post-content-wrapper">
                         <div className="img-upload-group">
@@ -117,17 +131,6 @@ const PostEdit = (props) => {
                             cols="30"
                             rows="25"
                             onChange={handleContent}
-                        ></textarea>
-                    </div>
-                    <div className="post-tags-wrapper">
-                        <label htmlFor="tags">
-                            Tags <span>(Optional)</span>
-                        </label>
-                        <textarea
-                            type="text"
-                            name="tags"
-                            rows="3"
-                            className="tags"
                         ></textarea>
                     </div>
                 </form>

@@ -13,6 +13,7 @@ const Posts = (props) => {
                 setLoading(true);
                 const result = await axios.get("/");
                 setPosts(result.data);
+                setLoading(true);
                 setLoading(false);
             } catch (err) {
                 console.log(err);
@@ -50,7 +51,7 @@ const Posts = (props) => {
                     })
                 )}
             </div>
-            {!posts.length > 0 && (
+            {!loading && !posts.length > 0 && (
                 <h2
                     style={{
                         textAlign: "center",

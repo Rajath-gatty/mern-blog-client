@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Add } from "@material-ui/icons";
-import { LinearProgress } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import AdminPost from "../Components/AdminPost/AdminPost";
 import Navbar from "../Components/Navbar/Navbar";
@@ -46,7 +46,6 @@ const Admin = (props) => {
     return (
         <>
             <Navbar />
-            {loading && <LinearProgress color="primary" />}
             <div className="admin-wrapper container">
                 <div className="admin-header-wrapper">
                     <h2 className="admin-hdng">Your Posts</h2>
@@ -58,7 +57,7 @@ const Admin = (props) => {
                         </Link>
                     )}
                 </div>
-                <table className="admin-table">
+                {!loading ? <table className="admin-table">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -69,7 +68,7 @@ const Admin = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {userPosts.map((post) => {
+                         {userPosts.map((post) => {
                             return (
                                 <AdminPost
                                     key={post._id}
@@ -83,7 +82,7 @@ const Admin = (props) => {
                             );
                         })}
                     </tbody>
-                </table>
+                </table>: <div className="loading-admin"><CircularProgress/></div>}
                 {!loading && !userPosts.length > 0 && (
                     <>
                         <h2

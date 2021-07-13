@@ -3,3 +3,12 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
+
+@media (max-width: 700px) {
+    .posts-container {
+        grid-template-columns: 1fr;
+        margin: 0rem 0.75rem;
+    }
+}
+
+
