@@ -33,43 +33,43 @@ const Post = (props) => {
                     <Skeleton
                         animation="wave"
                         variant="rect"
-                        width="60%"
-                        height={180}
+                        width={120}
+                        height={150}
                     />
                     <div>
                         <Skeleton
                             animation="wave"
                             variant="rect"
-                            width={300}
+                            width={200}
                             height={20}
-                            style={{marginTop: 10}}
+                            style={{ marginTop: 10 }}
                         />
                         <div className="skeleton-para">
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
-                                width={300}
+                                width="100%"
                                 height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
-                                width={300}
+                                width="100%"
                                 height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
-                                width={300}
+                                width="100%"
                                 height={10}
                                 style={{ marginTop: 6 }}
                             />
                             <Skeleton
                                 animation="wave"
                                 variant="rect"
-                                width={300}
+                                width="100%"
                                 height={10}
                                 style={{ marginTop: 6 }}
                             />
@@ -87,7 +87,8 @@ const Post = (props) => {
                         <div className="content-wrapper">
                             <h2 className="hdng">{title.substring(0, 60)}</h2>
                             <p className="content">
-                                {content.substring(0, 180)}....
+                                {content.substring(0, 80)}
+                                {content.length > 80 ? "...." : ""}
                             </p>
                         </div>
                     </div>

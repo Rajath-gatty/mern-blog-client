@@ -8,13 +8,13 @@ const SkeletonComp = (props) => {
             <div className="skeleton-title">
                 <Skeleton
                     variant="rect"
-                    width={400}
+                    width="100%"
                     style={{ marginTop: 10 }}
                     height={10}
                 />
                 <Skeleton
                     variant="rect"
-                    width={400}
+                    width={200}
                     style={{ marginTop: 10 }}
                     height={10}
                 />

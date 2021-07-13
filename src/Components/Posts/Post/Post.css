@@ -5,14 +5,16 @@
 }
 
 .hdng {
-    font-size: 18px;
+    font-size: 18px !important;
     margin-bottom: 0.25rem;
     margin-top: 0.15rem;
+    line-height: 1.6;
 }
 
 .content {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-top: 2rem;
 }
 
 .img {
@@ -40,5 +42,18 @@
 
     .post-info span {
         font-size: 11px;
+    }
+
+    .img {
+        height: 130px;
+    }
+
+    .hdng {
+        font-size: 14px !important;
+    }
+
+    .content {
+        font-size: 13px;
+        margin-top: 0rem;
     }
 }

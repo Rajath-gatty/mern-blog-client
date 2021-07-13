@@ -268,7 +268,7 @@ a {
 }
 
 .post-form .post-content-wrapper .img {
-    width: 700px;
+    width: 400px;
     height: 100%;
     object-fit: cover;
 }
@@ -378,6 +378,7 @@ a {
 .single-page-wrapper .single-post-img {
     width: 500px;
     margin: 0.25rem;
+    margin-right: 0.5rem;
 }
 
 .single-page-wrapper .single-para {
@@ -418,7 +419,7 @@ a {
     position: absolute;
     left: 0;
     top: 3rem;
-    width: 550px;
+    width: 360px;
 }
 
 .search-skeleton {
@@ -438,9 +439,9 @@ a {
 }
 
 .single-result h4 {
-    padding-top: 15px;
     line-height: 1.7;
     color: rgb(88, 88, 88);
+    font-size: 14px;
 }
 
 .single-result:hover {
@@ -527,7 +528,19 @@ a {
     }
 
     .profile-wrapper {
-        width: 470px;
+        width: 350px;
+    }
+
+    .profile-header {
+        font-size: 13px;
+    }
+
+    .profile-info span {
+        font-size: 14px;
+    }
+
+    .danger-section .delete-account {
+        font-size: 14px;
     }
 
     .search-wrapper {
@@ -561,5 +574,64 @@ a {
 
     .admin-wrapper .admin-hdng {
         font-size: 16px;
+    }
+
+    .single-page-wrapper .single-post-img {
+        width: 100%;
+    }
+
+    .post-form .post-content-wrapper .img {
+        width: 300px;
+    }
+
+    .post-form .post-content-wrapper svg {
+        font-size: 30px;
+    }
+
+    .btn {
+        min-width: 80px;
+        font-size: 12px;
+        outline: none;
+    }
+
+    .search-wrapper {
+        font-size: 13px !important;
+        width: 230px;
+    }
+
+    .search-wrapper svg {
+        font-size: 43px;
+    }
+
+    #search::placeholder {
+        font-size: 13px;
+    }
+
+    .search-result-wrapper {
+        width: 340px;
+    }
+
+    .search-result-wrapper .single-result h4 {
+        font-size: 13px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        padding: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-top: 1rem;
+    }
+
+    .form-wrapper form label {
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        margin-top: 10px;
+    }
+
+    .form-wrapper h2 {
+        font-size: 18px;
     }
 }

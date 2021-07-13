@@ -46,4 +46,12 @@ a {
     .main-hdng {
         font-size: 27px;
     }
+
+    .nav-items {
+        gap: 0rem;
+    }
+
+    .nav-items a {
+        margin-left: 1.95rem;
+    }
 }

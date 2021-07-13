@@ -57,6 +57,7 @@ const Posts = (props) => {
                         textAlign: "center",
                         color: "#737373",
                         marginTop: "10%",
+                        fontSize: 15,
                     }}
                 >
                     No posts Found!

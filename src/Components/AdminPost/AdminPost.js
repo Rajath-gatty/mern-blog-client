@@ -25,7 +25,10 @@ const AdminPost = (props) => {
 
     return (
         <tr className="single-admin-post">
-            <td>{props.title}</td>
+            <td>
+                {props.title.substring(0, 35)}
+                {props.title.length > 35 ? "..." : ""}
+            </td>
             <td>{props.author}</td>
             <td>{date}</td>
             <td>{<Edit />}</td>

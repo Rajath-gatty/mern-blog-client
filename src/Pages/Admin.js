@@ -27,20 +27,21 @@ const Admin = (props) => {
 
     const handleDelete = (id) => {
         const postId = {
-            id: id
-        }
-        axios.post("/admin/delete-post", postId, {
-            headers: {
-                "Authorization": "Bearer "+ token
-            }
-        })
-        .then((res) => {
-           const posts= userPosts.filter(item => item._id !== id);
-           setUserPosts(posts);
-        })
-        .catch(err => {
-            console.log(err);
-        })
+            id: id,
+        };
+        axios
+            .post("/admin/delete-post", postId, {
+                headers: {
+                    Authorization: "Bearer " + token,
+                },
+            })
+            .then((res) => {
+                const posts = userPosts.filter((item) => item._id !== id);
+                setUserPosts(posts);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     return (
@@ -57,32 +58,38 @@ const Admin = (props) => {
                         </Link>
                     )}
                 </div>
-                {!loading ? <table className="admin-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Published at</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         {userPosts.map((post) => {
-                            return (
-                                <AdminPost
-                                    key={post._id}
-                                    id={post._id}
-                                    title={post.title}
-                                    content={post.content}
-                                    createdAt={post.createdAt}
-                                    author={post.author}
-                                    onClick={handleDelete}
-                                />
-                            );
-                        })}
-                    </tbody>
-                </table>: <div className="loading-admin"><CircularProgress/></div>}
+                {!loading ? (
+                    <table className="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Published at</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {userPosts.map((post) => {
+                                return (
+                                    <AdminPost
+                                        key={post._id}
+                                        id={post._id}
+                                        title={post.title}
+                                        content={post.content}
+                                        createdAt={post.createdAt}
+                                        author={post.author}
+                                        onClick={handleDelete}
+                                    />
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                ) : (
+                    <div className="loading-admin">
+                        <CircularProgress />
+                    </div>
+                )}
                 {!loading && !userPosts.length > 0 && (
                     <>
                         <h2
@@ -90,6 +97,7 @@ const Admin = (props) => {
                                 textAlign: "center",
                                 color: "#737373",
                                 marginTop: "2rem",
+                                fontSize: 15,
                             }}
                         >
                             No Post created!
