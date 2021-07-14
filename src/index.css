@@ -377,6 +377,7 @@ a {
 
 .single-page-wrapper .single-post-img {
     width: 500px;
+    max-height: 400px;
     margin: 0.25rem;
     margin-right: 0.5rem;
 }
