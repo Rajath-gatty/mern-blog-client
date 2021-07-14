@@ -618,9 +618,8 @@ a {
     .form-wrapper {
         width: 100%;
         padding: 10px;
-        margin-left: 3px;
-        margin-right: 3px;
-        margin-top: 1rem;
+        margin-left: 0.5rem;
+        margin-top: 2rem;
     }
 
     .form-wrapper form label {
@@ -629,9 +628,19 @@ a {
 
     .submit-btn {
         margin-top: 10px;
+        margin-bottom: 1.5rem;
     }
 
     .form-wrapper h2 {
         font-size: 18px;
+        margin-top: 1.5rem;
+    }
+
+    .skeleton-img {
+        margin-right: 1rem;
+    }
+
+    .skeleton-title {
+        margin-left: 0.5rem;
     }
 }

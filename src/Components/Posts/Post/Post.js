@@ -30,12 +30,14 @@ const Post = (props) => {
         <Card>
             {loading ? (
                 <div className="skeleton-wrapper">
-                    <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width={120}
-                        height={150}
-                    />
+                    <div className="skeleton-img">
+                        <Skeleton
+                            animation="wave"
+                            variant="rect"
+                            width={120}
+                            height={150}
+                        />
+                    </div>
                     <div>
                         <Skeleton
                             animation="wave"

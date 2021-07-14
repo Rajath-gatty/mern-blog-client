@@ -14,10 +14,10 @@ const Posts = (props) => {
                 const result = await axios.get("/");
                 setPosts(result.data);
                 setLoading(true);
-                setLoading(false);
+                // setLoading(false);
             } catch (err) {
                 console.log(err);
-                setLoading(false);
+                // setLoading(false);
             }
         };
         fetchPosts();
