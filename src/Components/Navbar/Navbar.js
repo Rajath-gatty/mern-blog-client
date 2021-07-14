@@ -25,10 +25,14 @@ const Navbar = (props) => {
                             {pathname === "/admin/edit-post" ? (
                                 <button
                                     onClick={props.onClick}
-                                    disabled={isButtonDisabled || props.publishing}
+                                    disabled={
+                                        isButtonDisabled || props.publishing
+                                    }
                                     className="btn btn-special"
                                 >
-                                    {props.publishing? 'Publishing...' : 'Publish'}
+                                    {props.publishing
+                                        ? "Publishing..."
+                                        : "Publish"}
                                 </button>
                             ) : (
                                 ""
@@ -37,8 +41,14 @@ const Navbar = (props) => {
                     ) : (
                         <div className="nav-items">
                             {pathname !== "/" && <Link to="/">Home</Link>}
-                            <Link to="/auth/login">Login</Link>
-                            <Link to="/auth/signup">Signup</Link>
+                            {pathname === "/auth/login" ? (
+                                ""
+                            ) : (
+                                <>
+                                    <Link to="/auth/login">Login</Link>
+                                    <Link to="/auth/signup">Signup</Link>
+                                </>
+                            )}
                         </div>
                     )}
                 </div>

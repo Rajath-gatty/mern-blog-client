@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 import { useBlogContext } from "../Context/Context";
 import Navbar from "../Components/Navbar/Navbar";
-import Modal from "../Components/UI/Modal";
 import axios from "axios";
 
 const PostEdit = (props) => {
@@ -87,7 +86,6 @@ const PostEdit = (props) => {
     return (
         <>
             <Navbar onClick={handleSubmitPost} publishing={modal} />
-            {modal && <Modal timer={20000}>Publishing your Post.....</Modal>}
             <div className="create-post-wrapper">
                 <div className="mobile-btn-flex">
                     <button

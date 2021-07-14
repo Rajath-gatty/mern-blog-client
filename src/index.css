@@ -616,10 +616,14 @@ a {
     }
 
     .form-wrapper {
-        width: 100%;
+        width: 360px;
         padding: 10px;
-        margin-left: 0.5rem;
+        margin: 0 auto;
         margin-top: 2rem;
+    }
+
+    .form-wrapper form {
+        padding: 0rem 0.75rem;
     }
 
     .form-wrapper form label {
@@ -642,5 +646,13 @@ a {
 
     .skeleton-title {
         margin-left: 0.5rem;
+    }
+
+    .post-form .post-content-wrapper .title {
+        font-size: 25px;
+    }
+
+    .post-form .post-content-wrapper .content {
+        font-size: 17px;
     }
 }

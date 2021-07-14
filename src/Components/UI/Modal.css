@@ -11,7 +11,7 @@
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-    animation: animate 0.25s ease-out;
+    animation: animate 0.15s ease-out;
 }
 
 @keyframes animate {
@@ -31,7 +31,8 @@
         font-size: 12px;
         position: absolute;
         top: 53px;
-        left: 30%;
+        left: 50%;
+        transform: translateX(-50%);
         width: 250px;
     }
 }

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Post from "./Post/Post";
+import Modal from "../UI/Modal";
 import "./Posts.css";
 
 const Posts = (props) => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -14,10 +16,10 @@ const Posts = (props) => {
                 const result = await axios.get("/");
                 setPosts(result.data);
                 setLoading(true);
-                // setLoading(false);
+                setLoading(false);
             } catch (err) {
-                console.log(err);
-                // setLoading(false);
+                setError(true);
+                setLoading(false);
             }
         };
         fetchPosts();
@@ -25,6 +27,11 @@ const Posts = (props) => {
 
     return (
         <>
+            {error && (
+                <Modal bgColor="#ffe1e0" color="red" timer={3000}>
+                    Something went wrong
+                </Modal>
+            )}
             <div className="posts-container">
                 {loading ? (
                     <>

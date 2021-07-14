@@ -87,7 +87,7 @@ const Post = (props) => {
                             alt={Math.random().toString()}
                         />
                         <div className="content-wrapper">
-                            <h2 className="hdng">{title.substring(0, 60)}</h2>
+                            <h2 className="hdng">{title.substring(0, 50)}</h2>
                             <p className="content">
                                 {content.substring(0, 80)}
                                 {content.length > 80 ? "...." : ""}
