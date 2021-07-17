@@ -59,8 +59,8 @@ const Login = (props) => {
                             placeholder="password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <Link to="/auth/signup">
-                            don't have an account? signup
+                        <Link to="/admin/forgot-password">
+                            forgot password?
                         </Link>
                         <input
                             type="submit"

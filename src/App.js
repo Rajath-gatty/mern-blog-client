@@ -11,7 +11,8 @@ const PostEdit = React.lazy(() => import("./Pages/Post-edit"));
 const Profile = React.lazy(() => import("./Pages/Profile"));
 const SinglePage = React.lazy(() => import("./Pages/SinglePage"));
 const Admin = React.lazy(() => import("./Pages/Admin"));
-// const Page404 = React.lazy(() => import("./Pages/Page404"));
+const ForgotPassword = React.lazy(() => import("./Pages/ForgotPassword"));
+const ResetPassword = React.lazy(() => import("./Pages/ResetPassword"));
 
 function App() {
     const { isLoggedIn, setToken } = useBlogContext();
@@ -56,6 +57,12 @@ function App() {
                                 <Profile />
                             </Route>
                         )}
+                        <Route path="/admin/forgot-password">
+                            <ForgotPassword />
+                        </Route>
+                        <Route path="/admin/reset-password/:paramToken">
+                            <ResetPassword />
+                        </Route>
                         <Route path="*">
                             <Page404 />
                         </Route>

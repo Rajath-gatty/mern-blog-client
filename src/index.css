@@ -488,6 +488,26 @@ a {
     border-bottom: none;
 } */
 
+.forgot-pass-sent {
+    margin-top: 5% !important;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    display: block;
+}
+
+.forgot-pass-sent h2 {
+    margin-bottom: 1rem;
+    color: rgb(78, 78, 78);
+}
+
+.forgot-pass-sent p {
+    color: rgb(78, 78, 78);
+    font-size: 13px;
+}
+
 .danger-section {
     display: flex;
     gap: 1rem;

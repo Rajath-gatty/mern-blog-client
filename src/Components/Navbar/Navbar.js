@@ -41,14 +41,10 @@ const Navbar = (props) => {
                     ) : (
                         <div className="nav-items">
                             {pathname !== "/" && <Link to="/">Home</Link>}
-                            {pathname === "/auth/login" ? (
-                                ""
-                            ) : (
-                                <>
-                                    <Link to="/auth/login">Login</Link>
-                                    <Link to="/auth/signup">Signup</Link>
-                                </>
-                            )}
+                            <>
+                                <Link to="/auth/login">Login</Link>
+                                <Link to="/auth/signup">Signup</Link>
+                            </>
                         </div>
                     )}
                 </div>
