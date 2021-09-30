@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
 axios.defaults.baseURL = "http://34.93.84.239";
-axios.defaults.baseURL = "https://mern-blog12.herokuapp.com";
+//axios.defaults.baseURL = "https://mern-blog12.herokuapp.com";
 
 ReactDOM.render(
     <React.StrictMode>
