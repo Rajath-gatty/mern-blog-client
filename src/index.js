@@ -6,8 +6,8 @@ import { ContextProvider } from "./Context/Context";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://healthyroutine24.com";
-//axios.defaults.baseURL = "https://mern-blog12.herokuapp.com";
+//axios.defaults.baseURL = "https://healthyroutine24.com";
+axios.defaults.baseURL = "https://mern-blog12.herokuapp.com";
 
 ReactDOM.render(
     <React.StrictMode>
